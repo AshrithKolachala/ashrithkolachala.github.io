@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sangeetavarshini - Music Learning Platform</title>
+  <style>
+    html,body { height:100%; margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    iframe { border:0; width:100%; height:100vh; display:block; }
+    .fallback { display:flex; align-items:center; justify-content:center; height:100vh; padding:1rem; text-align:center; }
+    .button { display:inline-block; padding:.6rem 1rem; background:#0366d6; color:#fff; border-radius:6px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <iframe id="siteFrame"
+          src="https://AshrithKolachala.github.io/Music-Class-Hub-BETA/"
+          title="Music Class Hub"
+          allowfullscreen
+          sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-modals">
+  </iframe>
+
+  <noscript>
+    <div class="fallback">
+      <div>
+        <h2>JavaScript disabled</h2>
+        <p>Open the site directly:</p>
+        <p><a class="button" href="https://AshrithKolachala.github.io/Music-Class-Hub-BETA/" target="_blank" rel="noopener">Open site</a></p>
+      </div>
+    </div>
+  </noscript>
+
+  <script>
+    // If embedding is blocked (frame blocked by headers), replace with fallback after short timeout.
+    setTimeout(function(){
+      var f = document.getElementById('siteFrame');
+      var blocked = false;
+      try {
+        // If offsetHeight is 0 it's a sign embedding failed in some setups
+        if (!f || f.offsetHeight === 0) blocked = true;
+      } catch (e) {
+        blocked = true;
+      }
+      if (blocked) {
+        document.body.innerHTML = '<div class="fallback"><div><h2>Unable to embed the site</h2><p>The site could not be displayed inside a frame.</p><p><a class="button" href="https://AshrithKolachala.github.io/Music-Class-Hub-BETA/" target="_blank" rel="noopener">Open site in new tab</a></p></div></div>';
+      }
+    }, 1500);
+  </script>
+</body>
+</html>
